@@ -1,5 +1,5 @@
 ﻿string[] arr = (Console.ReadLine().Split(" ")).ToArray();
-Console.WriteLine(string.Join(" ",arr));
+
 
 string[] New_matrix(string[] arr ){
     string[] new_arr = new string[arr.Length];
@@ -8,7 +8,11 @@ string[] New_matrix(string[] arr ){
         if(arr[i].Length <= 3)
             new_arr[count++] = arr[i];
     }
+    Array.Resize(ref new_arr, count);
     return new_arr;
 }
 
-Console.WriteLine(string.Join("   ",New_matrix(arr)));
+
+Console.Write("Новый массив : [ ");
+Console.Write(string.Join(" , ",New_matrix(arr)));
+Console.WriteLine(" ]");
