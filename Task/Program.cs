@@ -4,6 +4,13 @@
 string[] New_matrix(string[] arr ){
     string[] new_arr = new string[arr.Length];
     int count = 0;
+    
+    if(arr.Length == 0){
+        Array.Resize(ref new_arr, count);
+        return new_arr;
+    }
+    
+    
     for(int i = 0; i < arr.Length; i++){
         if(arr[i].Length <= 3)
             new_arr[count++] = arr[i];
